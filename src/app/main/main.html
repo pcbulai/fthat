@@ -1,0 +1,93 @@
+  <div class="jumbotron text-center">
+
+    <p class="lead">
+      Calculate your income brotha'!
+    </p>
+    <div class="row">
+
+      <div class="col-md-6 col-md-offset-3">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="time" class="col-sm-4 control-label">Do you work hard?</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-time"></span>
+                </span>
+
+                <input type="time"
+                       class="form-control"
+                       placeholder="Email"
+                       id="time"
+                       ng-model="time"
+                       ng-change="vm.calculate.time(time); vm.calculate.total(rate);">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rate" class="col-sm-4 control-label">What's your rate?</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-euro"></span></span>
+                <input type="number"
+                       min="0"
+                       class="form-control"
+                       id="rate"
+                       ng-model="rate"
+                       ng-change="vm.calculate.total(rate);">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="clearfix">
+
+      </div>
+      <br>
+      <div class="" ng-if="vm.total">
+        <p class="text-center">
+          Yo! You'll earn <b>{{vm.total | currency:"€ ":2}}</b> a day.
+        </p>
+        <small class="text-center">
+          Enjoy a <span class="glyphicon glyphicon-glass"></span> on the beach...
+          <br>
+          You earned it!
+        </small>
+      </div>
+
+    </div>
+  </div>
+  <table class="table">
+    <caption>Here are your projections for 2016 mate <sup>*</sup></caption>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Business days</th>
+        <th>h/day</th>
+        <th>Income/month</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="n in vm.months">
+        <th>
+          {{n}}
+        </th>
+        <td>
+          {{vm.getWeekdaysInMonth($index, 2016)}}
+        </td>
+        <td>
+          <span ng-if="vm.hours">
+            {{vm.hours}} hours
+          </span>
+          <span ng-if="vm.minutes">
+             and {{vm.minutes}} minutes
+          </span>
+        </td>
+        <td>
+          {{vm.calculate.total(rate) * vm.getWeekdaysInMonth($index, 2016) | currency:"€ ":2}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  *) That's without holidays yoo!
