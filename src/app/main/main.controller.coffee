@@ -39,7 +39,7 @@ angular.module 'fthat'
         newday = new Date(iYear, iMonth, iDay).getDay()
         newday != 0 && newday != 6;
 
-      days = daysInMonth(month - 1, year)
+      days = daysInMonth(month, year)
       weekdays = 0;
       i = 0
       while i < days
