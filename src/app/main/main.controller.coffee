@@ -24,6 +24,7 @@ angular.module 'fthat'
       time : (time) ->
         vm.hours = new Date(time).getHours()
         vm.minutes = new Date(time).getMinutes()
+        vm.stuff = (10 * vm.minutes) / 6
 
       total : (rate) ->
         vm.total = (vm.hours + (((10 * vm.minutes) / 6) / 100)) * rate if rate
@@ -42,7 +43,7 @@ angular.module 'fthat'
       weekdays = 0;
       i = 0
       while i < days
-        if isWeekday(i + 1, month - 1, year)
+        if isWeekday(i + 1, month, year)
           weekdays++
         i++
       weekdays

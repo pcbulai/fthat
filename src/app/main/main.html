@@ -22,6 +22,7 @@
                        ng-model="time"
                        ng-change="vm.calculate.time(time); vm.calculate.total(rate);">
               </div>
+              <!-- {{vm.stuff}} -->
             </div>
           </div>
           <div class="form-group">
@@ -73,7 +74,7 @@
           {{n}}
         </th>
         <td>
-          {{vm.getWeekdaysInMonth($index + 1, 2016)}}
+          {{vm.getWeekdaysInMonth($index, 2016)}}
         </td>
         <td>
           <span ng-if="vm.hours">
