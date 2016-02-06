@@ -8,12 +8,12 @@ div
       
       .collapse.navbar-collapse
         ul.nav.navbar-nav
-          li.active
-            a(ng-href='#') Income Calculator
           li
-            a(ng-href='#') Income to PPH
+            a(ui-sref="root.income") Income Calculator
           li
-            a(ng-href='#') Stats
+            a(ui-sref="root.pph") Income to PPH
+          //- li
+          //-   a(ng-href='#') Stats
         ul.nav.navbar-nav.navbar-right
           li
-            a(href='https://github.com/pcbulai/app') Fork this. Submit a PR. Be social.
+            a(href='https://github.com/zsys/inccalc' target="_blank") Fork this. Submit a PR. Be social.

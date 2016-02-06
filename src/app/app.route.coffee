@@ -11,12 +11,27 @@ angular.module 'app'
           'footer':
             templateUrl: 'app/layout/footer.html'
 
-      .state 'root.home',
+      .state 'root.really',
         url: '/'
         views:
           'container@':
-            templateUrl: 'app/main/main.html'
-            controller: 'MainController'
+            templateUrl: 'app/home/home.html'
+            controller: 'HomeCtrl'
+            controllerAs: 'vm'
+
+      .state 'root.income',
+        url: '/income'
+        views:
+          'container@':
+            templateUrl: 'app/calculator/income.html'
+            controller: 'IncomeCtrl'
+            controllerAs: 'vm'
+      .state 'root.pph',
+        url: '/pph'
+        views:
+          'container@':
+            templateUrl: 'app/calculator/pph.html'
+            controller: 'PricePerHourCtrl'
             controllerAs: 'vm'
 
     $urlRouterProvider.otherwise '/'
