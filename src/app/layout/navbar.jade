@@ -2,17 +2,17 @@ div
   nav.navbar.navbar-static-top.navbar-inverse
     .container-fluid
       .navbar-header
-        a.navbar-brand(href='/')
+        a.navbar-brand(ui-sref="root.really")
           img(src='assets/logo.png', alt='')
           |           IncCalc
       
       .collapse.navbar-collapse
         ul.nav.navbar-nav
-          li
+          li(ui-sref-active="active")
             a(ui-sref="root.income") Income Calculator
-          li
+          li(ui-sref-active="active")
             a(ui-sref="root.pph") Income to PPH
-          li
+          li(ui-sref-active="active")
             a(ui-sref="root.decimal") Decimals
         ul.nav.navbar-nav.navbar-right
           li
