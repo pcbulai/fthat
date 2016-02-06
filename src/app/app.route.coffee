@@ -26,12 +26,21 @@ angular.module 'app'
             templateUrl: 'app/calculator/income.html'
             controller: 'IncomeCtrl'
             controllerAs: 'vm'
+
       .state 'root.pph',
         url: '/pph'
         views:
           'container@':
             templateUrl: 'app/calculator/pph.html'
             controller: 'PricePerHourCtrl'
+            controllerAs: 'vm'
+
+      .state 'root.decimal',
+        url: '/decimal'
+        views:
+          'container@':
+            templateUrl: 'app/calculator/decimal.html'
+            controller: 'DecimalCtrl'
             controllerAs: 'vm'
 
     $urlRouterProvider.otherwise '/'

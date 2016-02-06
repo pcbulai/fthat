@@ -23,7 +23,6 @@ IncomeCtrl = ($log, toastr) ->
     time : (time) ->
       vm.hours = new Date(time).getHours()
       vm.minutes = new Date(time).getMinutes()
-      vm.stuff = (10 * vm.minutes) / 6
 
     total : (rate) ->
       vm.total = (vm.hours + (((10 * vm.minutes) / 6) / 100)) * rate if rate
