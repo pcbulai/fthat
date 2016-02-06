@@ -1,0 +1,10 @@
+angular.module 'app',
+  ['ngAnimate',
+  'ngCookies',
+  'ngTouch',
+  'ngMessages',
+  'ngAria',
+  'ngResource',
+  'ui.router',
+  'ui.bootstrap',
+  'toastr']

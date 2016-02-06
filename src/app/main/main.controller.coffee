@@ -1,5 +1,5 @@
-angular.module 'fthat'
-  .controller 'MainController', ($timeout, webDevTec, toastr) ->
+angular.module 'app'
+  .controller 'MainController', ($timeout, toastr) ->
     'ngInject'
     vm = this
 
@@ -37,10 +37,10 @@ angular.module 'fthat'
 
       isWeekday = (iDay, iMonth, iYear) ->
         newday = new Date(iYear, iMonth, iDay).getDay()
-        newday != 0 && newday != 6;
+        newday != 0 && newday != 6
 
       days = daysInMonth(month, year)
-      weekdays = 0;
+      weekdays = 0
       i = 0
       while i < days
         if isWeekday(i + 1, month, year)
