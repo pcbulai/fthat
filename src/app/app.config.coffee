@@ -1,5 +1,6 @@
 angular.module 'app'
-  .config ($logProvider, toastrConfig) ->
+  .config ($logProvider, $locationProvider) ->
     'ngInject'
     # Enable log
     $logProvider.debugEnabled true
+    $locationProvider.html5Mode true
