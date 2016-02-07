@@ -1,12 +1,19 @@
 div
-  nav.navbar.navbar-static-top.navbar-inverse
+  nav.navbar.navbar-static-top.navbar-inverse(role="navigation")
     .container-fluid
       .navbar-header
+        button.navbar-toggle.collapsed(type='button', aria-expanded='false', ng-click="navbarCollapsed = !navbarCollapsed")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+
         a.navbar-brand(ui-sref="root.really")
           img(src='assets/logo.png', alt='')
-          |           IncCalc
+          | IncCalc
       
-      .collapse.navbar-collapse
+      nav.collapse.navbar-collapse(collapse="!navbarCollapsed")
         ul.nav.navbar-nav
           li(ui-sref-active="active")
             a(ui-sref="root.income") Income Calculator
@@ -14,6 +21,3 @@ div
             a(ui-sref="root.pph") Income to PPH
           li(ui-sref-active="active")
             a(ui-sref="root.decimal") Decimals
-        ul.nav.navbar-nav.navbar-right
-          li
-            a(href='https://github.com/zsys/inccalc' target="_blank") Fork this. Submit a PR. Be social.
