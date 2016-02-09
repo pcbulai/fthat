@@ -1,0 +1,22 @@
+.jumbotron.text-center
+  p.lead Haven't found a calculator for minutes as decimals of one hour
+  .row
+    .col-md-6.col-md-offset-3
+
+      form.form-horizontal
+        .form-group
+          label.col-sm-4.control-label(for='minutes') How many minutes?
+          .col-sm-8
+            .input-group
+              span.input-group-addon
+                span.glyphicon.glyphicon-time
+              input#minutes.form-control(type='number', min="0", max="60" ng-model='mins', ng-change='vm.decimal(mins);')
+        
+      br
+      div(ng-if='vm.total && !vm.error')
+        p.text-center
+          | That's 
+          b {{vm.total}}%
+          |  of 1 hour
+      div(ng-if='vm.error')
+        p.text-center {{vm.error}}
